@@ -1,0 +1,22 @@
+
+<h1>Student-Database</h1>
+<div>
+    <form>
+        Enter Roll No:<input type="text" [(ngModel)]="student.id" name="id"/><br/>
+        Enter Name:<input type="text" [(ngModel)]="student.name" name="name"/><br/>
+        <button (click)= "addStudent()">Add Student</button>
+    </form>
+</div>
+<div>
+    <table border="1">
+        <tr>
+            <th>Roll</th>
+            <th>Name</th>
+        </tr>
+        <tr *ngFor="let student of students">
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td> 
+            <td><button (click)="getStudentById(student.id)">Update</button>|<button (click)="deleteStudent(student.id)">Delete</button></td>
+        </tr>
+    </table>
+</div>
